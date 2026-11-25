@@ -1,0 +1,122 @@
+/* Maverick Labs AI and Robotics — "Digital Wonder" theme.
+   A child's sky at dusk: deep indigo, starlight, and warm colour.
+   Built for wonder AND legibility: high contrast, big rounded type,
+   generous spacing, visible focus — assistive begins with the website. */
+:root{
+  --sky:#232a6b;          /* deep indigo night sky */
+  --sky2:#35408f;
+  --cloud:#fffaf0;        /* warm cloud paper */
+  --cloud2:#fef3dd;
+  --ink:#26324d;          /* body text — high contrast on cloud */
+  --muted:#4c5a7d;
+  --coral:#e4572e;        /* warm coral — links/accents */
+  --sun:#f2a007;          /* sunshine */
+  --mint:#1d8a6e;         /* mint green */
+  --grape:#6c4fd8;        /* wonder purple */
+  --card:#ffffff;
+  --radius:22px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;color:var(--ink);
+  font:19px/1.7 "Nunito","Segoe UI",system-ui,-apple-system,sans-serif;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(242,160,7,.20) 0 90px, transparent 91px),
+    radial-gradient(circle at 88% 4%, rgba(108,79,216,.16) 0 130px, transparent 131px),
+    radial-gradient(circle at 96% 34%, rgba(29,138,110,.12) 0 70px, transparent 71px),
+    radial-gradient(rgba(35,42,107,.14) 1.6px, transparent 1.7px),
+    var(--cloud);
+  background-size:auto,auto,auto,26px 26px,auto;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--coral);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:2px;font-weight:700}
+a:hover{color:var(--grape)}
+a:focus-visible,button:focus-visible{outline:4px solid var(--sun);outline-offset:3px;border-radius:8px}
+.container{width:min(1060px,calc(100% - 40px));margin:0 auto}
+.skip{position:absolute;left:-999px}
+.skip:focus{left:10px;top:10px;background:var(--sun);color:var(--ink);padding:10px 16px;z-index:9;border-radius:12px;font-weight:800}
+/* header — the night-sky band */
+.dateline{background:var(--sky);color:#ffe9a8;font:700 12.5px/1.5 "Nunito",sans-serif;text-transform:uppercase;letter-spacing:.12em}
+.dateline .container{display:flex;justify-content:space-between;gap:16px;padding:9px 0;flex-wrap:wrap}
+header{background:linear-gradient(180deg,var(--sky) 0%,var(--sky2) 78%,#4a54a8 100%);color:#fff;position:relative;overflow:hidden}
+header::after{content:"✦ ✧ ✦ ✧ ✦";position:absolute;top:14px;right:4%;color:#ffd75e;font-size:20px;letter-spacing:26px;opacity:.9;pointer-events:none}
+.nameplate{text-align:center;padding:38px 16px 8px;position:relative;z-index:1}
+.nameplate .brandname{font-family:"Fredoka","Nunito",sans-serif;font-size:clamp(38px,6.6vw,66px);letter-spacing:.04em;font-weight:600;line-height:1.05;color:#fff;text-decoration:none}
+.nameplate .brandname:hover{color:#ffd75e}
+.nameplate .tagline{color:#dfe4ff;margin-top:10px;font-size:18px;font-weight:600}
+.rainbow{height:10px;background:linear-gradient(90deg,var(--coral) 0 20%,var(--sun) 20% 40%,#3fa34d 40% 60%,#2f7fd0 60% 80%,var(--grape) 80% 100%)}
+.nav{padding:14px 0 20px;position:relative;z-index:1}
+.nav .container{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.nav a{font:800 14px "Nunito",sans-serif;text-transform:uppercase;letter-spacing:.08em;color:var(--sky);background:#fff;text-decoration:none;padding:10px 18px;border-radius:999px;box-shadow:0 3px 0 rgba(0,0,0,.25)}
+.nav a:hover{background:#ffd75e;color:var(--sky)}
+.nav a[aria-current="page"]{background:var(--sun);color:var(--ink)}
+/* body copy */
+.pagehead{padding:46px 0 8px}
+.kicker{display:inline-block;background:#ffe9a8;color:var(--ink);font:800 13px "Nunito",sans-serif;text-transform:uppercase;letter-spacing:.14em;padding:7px 14px;border-radius:999px;margin-bottom:18px}
+h1{font-family:"Fredoka","Nunito",sans-serif;font-size:clamp(34px,5.4vw,56px);line-height:1.12;font-weight:600;margin:0 0 18px;color:var(--sky)}
+h1 em{font-style:normal;color:var(--coral)}
+.standfirst{font-size:21.5px;line-height:1.6;max-width:46em}
+.rule{border:0;border-top:4px dotted #b9c2e8;margin:30px 0}
+.rule.thick{border-top:0;height:10px;border-radius:99px;background:linear-gradient(90deg,var(--coral),var(--sun),#3fa34d,#2f7fd0,var(--grape))}
+.section{padding:32px 0 10px}
+h2{font-family:"Fredoka","Nunito",sans-serif;font-size:30px;font-weight:600;margin:0 0 12px;line-height:1.25;color:var(--sky)}
+h2 .no{display:block;font:800 14px "Nunito",sans-serif;color:var(--coral);letter-spacing:.14em;margin-bottom:7px;text-transform:uppercase}
+h3{font-family:"Fredoka","Nunito",sans-serif;font-size:21px;font-weight:600;margin:0 0 8px;color:var(--sky)}
+p{margin:0 0 15px}
+.lede{font-size:20px}
+.small{font-size:15.5px;color:var(--muted)}
+.mono{font-family:ui-monospace,"Courier New",monospace}
+/* cards — the three pillars */
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:20px 0}
+.cols article{background:var(--card);border-radius:var(--radius);padding:24px;box-shadow:0 6px 0 rgba(35,42,107,.14),0 14px 28px rgba(35,42,107,.10);border-top:10px solid var(--sun)}
+.cols article:nth-child(2){border-top-color:var(--mint)}
+.cols article:nth-child(3){border-top-color:var(--grape)}
+.cols .num{font:800 12.5px "Nunito",sans-serif;color:var(--coral);letter-spacing:.14em;text-transform:uppercase}
+.cols h3{font-size:23px;margin:7px 0 9px}
+.cols p{font-size:16.5px}
+/* ledger & panels, wonder-styled */
+.ledger{background:var(--card);border-radius:var(--radius);padding:8px 24px 14px;margin:20px 0;box-shadow:0 6px 0 rgba(35,42,107,.14),0 14px 28px rgba(35,42,107,.10)}
+.ledger h3{font:800 13.5px "Nunito",sans-serif;text-transform:uppercase;letter-spacing:.14em;border-bottom:2px dotted #b9c2e8;padding:12px 0 9px;margin:0 0 6px;color:var(--sky)}
+.ledger table{width:100%;border-collapse:collapse;font-size:16.5px}
+.ledger td{padding:8px 0;border-bottom:2px dotted #e3e8f7;vertical-align:top}
+.ledger td:last-child{text-align:right;font-weight:800;white-space:nowrap;padding-left:18px}
+.ledger tr:last-child td{border-bottom:0}
+.panel{border-radius:var(--radius);overflow:hidden;background:#101638;margin:28px 0;box-shadow:0 8px 0 rgba(35,42,107,.25),0 18px 34px rgba(35,42,107,.18)}
+.panel img{display:block;width:100%;height:auto}
+.panel figcaption{background:var(--card);font-size:14.5px;line-height:1.55;padding:13px 16px;color:var(--ink)}
+.panel figcaption b{text-transform:uppercase;letter-spacing:.08em;color:var(--coral)}
+/* entries, notices, bubbles */
+.entry{border-top:3px dotted #b9c2e8;padding:20px 0}
+.entry:first-of-type{border-top:0}
+.entry h3{font-size:23px}
+.entry .meta{font:800 12.5px "Nunito",sans-serif;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);margin-bottom:7px}
+.entry p{max-width:52em}
+.notice{background:var(--cloud2);border:3px dashed var(--sun);border-radius:var(--radius);padding:18px 20px;margin:24px 0;font-size:16.5px}
+.predict{background:var(--card);border-radius:var(--radius);padding:22px 24px;margin:24px 0;box-shadow:0 6px 0 rgba(35,42,107,.14)}
+.predict h3{font:800 14.5px "Nunito",sans-serif;text-transform:uppercase;letter-spacing:.13em}
+.bubble{background:#fff;border-radius:20px;padding:16px 19px;position:relative;font-size:16.5px;box-shadow:0 5px 0 rgba(35,42,107,.14);margin:18px 0}
+.bubble::after{content:"";position:absolute;left:46px;bottom:-12px;border-width:13px 10px 0 10px;border-style:solid;border-color:#fff transparent transparent transparent}
+.obit{background:#fff;border-radius:var(--radius);padding:24px;margin:22px 0;box-shadow:0 6px 0 rgba(35,42,107,.14)}
+.stamp{display:inline-block;background:var(--coral);color:#fff;font:800 12.5px "Nunito",sans-serif;letter-spacing:.16em;padding:8px 15px;border-radius:999px;transform:rotate(-3deg);text-transform:uppercase}
+table.verdict{width:100%;border-collapse:separate;border-spacing:0;margin:18px 0;font-size:16.5px;background:var(--card);border-radius:16px;overflow:hidden;box-shadow:0 5px 0 rgba(35,42,107,.12)}
+table.verdict th,table.verdict td{padding:10px 13px;text-align:left;border-bottom:2px dotted #e3e8f7}
+table.verdict th{font:800 12.5px "Nunito",sans-serif;text-transform:uppercase;letter-spacing:.1em;background:#ffe9a8;color:var(--ink)}
+.pass{color:var(--mint);font-weight:800}.miss{color:var(--coral);font-weight:800}.unv{color:var(--grape);font-weight:800}
+.prose{max-width:760px}
+.prose p{font-size:18.5px}
+.prose h2{margin-top:36px}
+/* footer */
+.footer{background:var(--sky);color:#dfe4ff;margin-top:60px;padding:26px 0 36px;font-size:15px}
+.footer .container{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.footer a{color:#ffd75e}
+.colophon{font-size:12.5px;margin-top:10px;color:#aab4e8}
+@media(max-width:820px){
+  body{font-size:18px}.standfirst{font-size:20px}
+  .cols{grid-template-columns:1fr}
+  .dateline .container{justify-content:center;text-align:center}
+  header::after{display:none}
+}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+}
